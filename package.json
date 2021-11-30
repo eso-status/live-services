@@ -30,14 +30,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:eso-status/live-services-dev.git"
+    "url": "git@github.com:eso-status/live-services.git"
   },
   "author": "@dov118 <contact@dov118.dev> (https://dov118.dev)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/eso-status/live-services-dev/issues"
+    "url": "https://github.com/eso-status/live-services/issues"
   },
-  "homepage": "https://github.com/eso-status/live-services-dev#readme",
+  "homepage": "https://github.com/eso-status/live-services#readme",
   "devDependencies": {
     "@eso-status/types": "1.0.0",
     "@types/jest": "^27.0.3",
