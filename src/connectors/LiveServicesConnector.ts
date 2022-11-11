@@ -1,6 +1,8 @@
-import axios, { AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
 import { RawEsoStatus } from '@eso-status/types';
 import LiveServicesElement from '../classes/LiveServicesElement';
+
+const axios = require('axios');
 
 /**
  * Connector used to get data from https://live-services.elderscrollsonline.com/status/realms
@@ -25,6 +27,7 @@ export default class LiveServicesConnector {
    * @return Promise<string> Raw content of the remote website
    */
   public static async getRemoteContent(): Promise<string> {
+    // @ts-ignore
     const response: AxiosResponse<string> = await axios.get<string>(LiveServicesConnector.url);
 
     if (response?.status !== 200) {

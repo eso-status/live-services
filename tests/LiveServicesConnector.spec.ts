@@ -1,4 +1,4 @@
-import { RawEsoStatus } from '@eso-status/types';
+import { RawEsoStatus, Slug } from '@eso-status/types';
 import LiveServicesConnector from '../src/connectors/LiveServicesConnector';
 
 describe('ServiceAlertConnector', (): void => {
@@ -38,7 +38,7 @@ describe('ServiceAlertConnector', (): void => {
   it('getData', (): void => {
     data.forEach((item: RawEsoStatus): void => {
       expect(item.rawSlug?.includes('The Elder Scrolls Online ')).toEqual(true);
-      expect(item.slugs !== ['undefined']).toEqual(true);
+      expect((<Slug[]>item.slugs).length !== 0 && (<Slug[]>item.slugs)[0] !== 'undefined').toEqual(true);
       expect(item.status !== 'undefined').toEqual(true);
       expect(item.support !== undefined).toEqual(true);
       expect(item.zone !== undefined).toEqual(true);
