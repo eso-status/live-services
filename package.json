@@ -1,6 +1,6 @@
 {
   "name": "@eso-status/live-services",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Library used to get servers status of The elders scrolls Online game with https://live-services.elderscrollsonline.com/status/realms",
   "main": "lib/index.js",
   "scripts": {
