@@ -4,7 +4,7 @@ import LiveServices from 'index';
 import axios from 'axios';
 import pattern from './data/pattern';
 
-describe('fake test', (): void => {
+describe('LiveServices (e2e)', (): void => {
   it.each(pattern)(
     'should pattern works with ($file)',
     async (patternData: {
@@ -30,7 +30,7 @@ describe('fake test', (): void => {
     },
   );
 
-  it('should return nothing when url return nothing', async (): Promise<void> => {
+  it('should return empty array when api return error or nothing', async (): Promise<void> => {
     jest
       .spyOn(axios, 'get')
       .mockImplementation(
