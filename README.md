@@ -17,4 +17,3 @@
 [![Build Status](https://github.com/eso-status/live-services/workflows/CD/badge.svg)](https://github.com/eso-status/live-services/actions/workflows/CD.yaml)
 
 eso-status/live-services is a library for getting and formatting data can founded in [https://live-services.elderscrollsonline.com/status/realms](https://live-services.elderscrollsonline.com/status/realms)
-
