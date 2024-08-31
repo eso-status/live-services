@@ -1,6 +1,6 @@
 import { RawEsoStatus } from '@eso-status/types';
 import * as fs from 'node:fs';
-import LiveServices from 'index';
+import LiveServices from 'src';
 import axios from 'axios';
 import pattern from './data/pattern';
 
