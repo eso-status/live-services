@@ -1,5 +1,4 @@
 /.idea/
-/node_modules/
-/coverage/
-/tsconfig.build.tsbuildinfo
 /lib/
+/coverage/
+/node_modules/
