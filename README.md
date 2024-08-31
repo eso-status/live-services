@@ -16,5 +16,104 @@
 [![Build Status](https://github.com/eso-status/live-services/workflows/CI/badge.svg)](https://github.com/eso-status/live-services/actions/workflows/CI.yaml)
 [![Build Status](https://github.com/eso-status/live-services/workflows/CD/badge.svg)](https://github.com/eso-status/live-services/actions/workflows/CD.yaml)
 
-eso-status/live-services is a library for getting and formatting data can founded in [https://live-services.elderscrollsonline.com/status/realms](https://live-services.elderscrollsonline.com/status/realms)
+eso-status/live-services is a library for retrieving and formatting data, which can be found at [https://live-services.elderscrollsonline.com/status/realms](https://live-services.elderscrollsonline.com/status/realms).
 
+## Table of Contents
+- [Install](#install)
+- [Usage](#usage)
+- [Return exemple](#return-exemple)
+
+### Install
+```shell
+npm i @eso-status/live-services
+```
+
+### Usage
+```javascript
+import LiveServices from '@eso-status/live-services';
+import { RawEsoStatus } from '@eso-status/types';
+
+const rawEsoStatus: RawEsoStatus = await LiveServices.getData();
+```
+### Return exemple
+```text
+[
+  {
+    sources: [ 'https://live-services.elderscrollsonline.com/status/realms' ],
+    raw: [ 'The Elder Scrolls Online (EU)' ],
+    slugs: [ 'server_pc_eu' ],
+    type: 'server',
+    support: 'pc',
+    zone: 'eu',
+    status: 'up',
+    rawSlug: 'The Elder Scrolls Online (EU)',
+    rawStatus: 'UP'
+  },
+  {
+    sources: [ 'https://live-services.elderscrollsonline.com/status/realms' ],
+    raw: [ 'The Elder Scrolls Online (NA)' ],
+    slugs: [ 'server_pc_na' ],
+    type: 'server',
+    support: 'pc',
+    zone: 'na',
+    status: 'up',
+    rawSlug: 'The Elder Scrolls Online (NA)',
+    rawStatus: 'UP'
+  },
+  {
+    sources: [ 'https://live-services.elderscrollsonline.com/status/realms' ],
+    raw: [ 'The Elder Scrolls Online (PS4 - EU)' ],
+    slugs: [ 'server_ps_eu' ],
+    type: 'server',
+    support: 'ps',
+    zone: 'eu',
+    status: 'up',
+    rawSlug: 'The Elder Scrolls Online (PS4 - EU)',
+    rawStatus: 'UP'
+  },
+  {
+    sources: [ 'https://live-services.elderscrollsonline.com/status/realms' ],
+    raw: [ 'The Elder Scrolls Online (PS4 - US)' ],
+    slugs: [ 'server_ps_na' ],
+    type: 'server',
+    support: 'ps',
+    zone: 'na',
+    status: 'up',
+    rawSlug: 'The Elder Scrolls Online (PS4 - US)',
+    rawStatus: 'UP'
+  },
+  {
+    sources: [ 'https://live-services.elderscrollsonline.com/status/realms' ],
+    raw: [ 'The Elder Scrolls Online (PTS)' ],
+    slugs: [ 'server_pc_pts' ],
+    type: 'server',
+    support: 'pc',
+    zone: 'pts',
+    status: 'up',
+    rawSlug: 'The Elder Scrolls Online (PTS)',
+    rawStatus: 'UP'
+  },
+  {
+    sources: [ 'https://live-services.elderscrollsonline.com/status/realms' ],
+    raw: [ 'The Elder Scrolls Online (XBox - EU)' ],
+    slugs: [ 'server_xbox_eu' ],
+    type: 'server',
+    support: 'xbox',
+    zone: 'eu',
+    status: 'up',
+    rawSlug: 'The Elder Scrolls Online (XBox - EU)',
+    rawStatus: 'UP'
+  },
+  {
+    sources: [ 'https://live-services.elderscrollsonline.com/status/realms' ],
+    raw: [ 'The Elder Scrolls Online (XBox - US)' ],
+    slugs: [ 'server_xbox_na' ],
+    type: 'server',
+    support: 'xbox',
+    zone: 'na',
+    status: 'up',
+    rawSlug: 'The Elder Scrolls Online (XBox - US)',
+    rawStatus: 'UP'
+  }
+]
+```

@@ -7,7 +7,7 @@ export default class Connector {
       await axios.get<string>(LiveServicesURL);
 
     return response?.status === 200 && !!response?.data
-      ? String(response?.data)
+      ? JSON.stringify(response?.data)
       : '';
   }
 }
