@@ -7,13 +7,10 @@
   "license": "MIT",
   "engineStrict": true,
   "files": [
-    "lib",
-    "lib/interface",
     "lib/interface/rawAssociation.interface.d.ts",
     "lib/interface/rawAssociation.interface.js",
     "lib/interface/remoteData.interface.d.ts",
     "lib/interface/remoteData.interface.js",
-    "lib/type",
     "lib/type/rawSlug.type.d.ts",
     "lib/type/rawSlug.type.js",
     "lib/type/rawStatus.type.d.ts",
