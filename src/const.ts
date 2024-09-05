@@ -1,6 +1,7 @@
 import { RawAssociation } from './interface/rawAssociation.interface';
+import { SourceUrl } from './type/sourceUrl.type';
 
-export const LiveServicesURL: string =
+export const LiveServicesURL: SourceUrl =
   'https://live-services.elderscrollsonline.com/status/realms';
 
 export const rawSupportZoneAssociations: RawAssociation[] = [

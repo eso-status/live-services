@@ -1,17 +1,14 @@
-import { RawEsoStatus } from '@eso-status/types';
 import * as fs from 'node:fs';
-import LiveServices from 'src';
 import axios from 'axios';
-import { RemoteData } from 'src/interface/remoteData.interface';
+import { RemoteData } from '../src/interface/remoteData.interface';
+import LiveServices from '../src';
 import pattern from './data/pattern';
+import { PatternItem } from './interface/patternItem.interface';
 
 describe('LiveServices (e2e)', (): void => {
   it.each(pattern)(
     'should pattern works with ($file)',
-    async (patternData: {
-      file: string;
-      expected: RawEsoStatus[];
-    }): Promise<void> => {
+    async (patternData: PatternItem): Promise<void> => {
       jest
         .spyOn(axios, 'get')
         .mockImplementation(

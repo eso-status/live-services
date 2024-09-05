@@ -1,8 +1,8 @@
 import { Support, Zone } from '@eso-status/types';
-import { RawSlug } from '../type/rawSlug.type';
+import { RemoteRawSlug } from '../type/remoteRawSlug.type';
 
 export interface RawAssociation {
-  raw: RawSlug;
+  raw: RemoteRawSlug;
   support: Support;
   zone: Zone;
 }

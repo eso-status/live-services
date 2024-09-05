@@ -1,4 +1,4 @@
-export type RawSlug =
+export type RemoteRawSlug =
   | 'The Elder Scrolls Online (EU)'
   | 'The Elder Scrolls Online (NA)'
   | 'The Elder Scrolls Online (PS4 - EU)'

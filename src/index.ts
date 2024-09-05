@@ -1,14 +1,21 @@
-import { RawEsoStatus, Slug, Status, Support, Zone } from '@eso-status/types';
+import { Slug, Status, Support, Zone } from '@eso-status/types';
 import { LiveServicesURL, rawSupportZoneAssociations } from './const';
 import { RemoteData } from './interface/remoteData.interface';
-import { RawSlug } from './type/rawSlug.type';
 import Connector from './connector';
+import { EsoStatusRawData } from './interface/esoStatusRawData.interface';
+import { RemoteRawSlug } from './type/remoteRawSlug.type';
 
+/**
+ * Class for retrieving announcement information
+ */
 export default class LiveServices {
-  public static async getData(): Promise<RawEsoStatus[]> {
+  /**
+   * Method for retrieving announcement information
+   */
+  public static async getData(): Promise<EsoStatusRawData[]> {
     const remoteContent: string = await Connector.getRemoteContent();
 
-    const returnList: RawEsoStatus[] = [];
+    const returnList: EsoStatusRawData[] = [];
 
     if (!remoteContent) {
       return [];
@@ -16,11 +23,11 @@ export default class LiveServices {
 
     const json: RemoteData = <RemoteData>JSON.parse(remoteContent);
     rawSupportZoneAssociations.forEach(
-      (raw: { raw: RawSlug; support: Support; zone: Zone }): void => {
+      (raw: { raw: RemoteRawSlug; support: Support; zone: Zone }): void => {
         returnList.push({
-          sources: [LiveServicesURL],
-          raw: [raw.raw],
-          slugs: [<Slug>`server_${raw.support}_${raw.zone}`],
+          source: LiveServicesURL,
+          raw: `"${raw.raw}":"${json.zos_platform_response.response[raw.raw]}"`,
+          slug: <Slug>`server_${raw.support}_${raw.zone}`,
           type: 'server',
           support: raw.support,
           zone: raw.zone,

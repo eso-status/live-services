@@ -16,7 +16,7 @@
 [![Build Status](https://github.com/eso-status/live-services/workflows/CI/badge.svg)](https://github.com/eso-status/live-services/actions/workflows/CI.yaml)
 [![Build Status](https://github.com/eso-status/live-services/workflows/CD/badge.svg)](https://github.com/eso-status/live-services/actions/workflows/CD.yaml)
 
-eso-status/live-services is a library for retrieving and formatting data, which can be found at [https://live-services.elderscrollsonline.com/status/realms](https://live-services.elderscrollsonline.com/status/realms).
+eso-status/live-services
 
 ## Table of Contents
 - [Install](#install)
@@ -31,17 +31,17 @@ npm i @eso-status/live-services
 ### Usage
 ```javascript
 import LiveServices from '@eso-status/live-services';
-import { RawEsoStatus } from '@eso-status/types';
+import { EsoStatusRawData } from '@eso-status/types';
 
-const rawEsoStatus: RawEsoStatus = await LiveServices.getData();
+const esoStatusRawDataList: EsoStatusRawData[] = await LiveServices.getData();
 ```
 ### Return exemple
 ```text
 [
   {
-    sources: [ 'https://live-services.elderscrollsonline.com/status/realms' ],
-    raw: [ 'The Elder Scrolls Online (EU)' ],
-    slugs: [ 'server_pc_eu' ],
+    source: 'https://live-services.elderscrollsonline.com/status/realms',
+    raw: 'The Elder Scrolls Online (EU)',
+    slug: 'server_pc_eu',
     type: 'server',
     support: 'pc',
     zone: 'eu',
@@ -50,9 +50,9 @@ const rawEsoStatus: RawEsoStatus = await LiveServices.getData();
     rawStatus: 'UP'
   },
   {
-    sources: [ 'https://live-services.elderscrollsonline.com/status/realms' ],
-    raw: [ 'The Elder Scrolls Online (NA)' ],
-    slugs: [ 'server_pc_na' ],
+    source: 'https://live-services.elderscrollsonline.com/status/realms',
+    raw: 'The Elder Scrolls Online (NA)',
+    slug: 'server_pc_na',
     type: 'server',
     support: 'pc',
     zone: 'na',
@@ -61,9 +61,9 @@ const rawEsoStatus: RawEsoStatus = await LiveServices.getData();
     rawStatus: 'UP'
   },
   {
-    sources: [ 'https://live-services.elderscrollsonline.com/status/realms' ],
-    raw: [ 'The Elder Scrolls Online (PS4 - EU)' ],
-    slugs: [ 'server_ps_eu' ],
+    source: 'https://live-services.elderscrollsonline.com/status/realms',
+    raw: 'The Elder Scrolls Online (PS4 - EU)',
+    slug: 'server_ps_eu',
     type: 'server',
     support: 'ps',
     zone: 'eu',
@@ -72,9 +72,9 @@ const rawEsoStatus: RawEsoStatus = await LiveServices.getData();
     rawStatus: 'UP'
   },
   {
-    sources: [ 'https://live-services.elderscrollsonline.com/status/realms' ],
-    raw: [ 'The Elder Scrolls Online (PS4 - US)' ],
-    slugs: [ 'server_ps_na' ],
+    source: 'https://live-services.elderscrollsonline.com/status/realms',
+    raw: 'The Elder Scrolls Online (PS4 - US)',
+    slug: 'server_ps_na',
     type: 'server',
     support: 'ps',
     zone: 'na',
@@ -83,9 +83,9 @@ const rawEsoStatus: RawEsoStatus = await LiveServices.getData();
     rawStatus: 'UP'
   },
   {
-    sources: [ 'https://live-services.elderscrollsonline.com/status/realms' ],
-    raw: [ 'The Elder Scrolls Online (PTS)' ],
-    slugs: [ 'server_pc_pts' ],
+    source: 'https://live-services.elderscrollsonline.com/status/realms',
+    raw: 'The Elder Scrolls Online (PTS)',
+    slug: 'server_pc_pts',
     type: 'server',
     support: 'pc',
     zone: 'pts',
@@ -94,9 +94,9 @@ const rawEsoStatus: RawEsoStatus = await LiveServices.getData();
     rawStatus: 'UP'
   },
   {
-    sources: [ 'https://live-services.elderscrollsonline.com/status/realms' ],
-    raw: [ 'The Elder Scrolls Online (XBox - EU)' ],
-    slugs: [ 'server_xbox_eu' ],
+    source: 'https://live-services.elderscrollsonline.com/status/realms',
+    raw: 'The Elder Scrolls Online (XBox - EU)',
+    slug: 'server_xbox_eu',
     type: 'server',
     support: 'xbox',
     zone: 'eu',
@@ -105,9 +105,9 @@ const rawEsoStatus: RawEsoStatus = await LiveServices.getData();
     rawStatus: 'UP'
   },
   {
-    sources: [ 'https://live-services.elderscrollsonline.com/status/realms' ],
-    raw: [ 'The Elder Scrolls Online (XBox - US)' ],
-    slugs: [ 'server_xbox_na' ],
+    source: 'https://live-services.elderscrollsonline.com/status/realms',
+    raw: 'The Elder Scrolls Online (XBox - US)',
+    slug: 'server_xbox_na',
     type: 'server',
     support: 'xbox',
     zone: 'na',
