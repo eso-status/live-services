@@ -1,22 +1,45 @@
-import { RawEsoStatus } from '@eso-status/types';
-import LiveServicesConnector from './connectors/LiveServicesConnector';
+import { ServerType, Slug, Status, Support, Zone } from '@eso-status/types';
+import { LiveServicesURL, rawSupportZoneAssociations } from './const';
+import { RemoteData } from './interface/remoteData.interface';
+import Connector from './connector';
+import { EsoStatusRawData } from './interface/esoStatusRawData.interface';
+import { RemoteRawSlug } from './type/remoteRawSlug.type';
 
 /**
- * Class of Live Services
+ * Class for retrieving announcement information
  */
-export class LiveServices {
+export default class LiveServices {
   /**
-     * Methode used to get Live Services data
-     *
-     * @public
-     * @static
-     *
-     * @return Promise<RawEsoStatus[]> Live Services elements
-     */
-  public static async getData(): Promise<RawEsoStatus[]> {
-    const remoteContent: string = await LiveServicesConnector.getRemoteContent();
-    const filteredContent: string = LiveServicesConnector.getFilterContent(remoteContent);
-    const lastRawData: RawEsoStatus[] = LiveServicesConnector.changeFilterContentForList(filteredContent);
-    return LiveServicesConnector.getData(lastRawData);
+   * Method for retrieving announcement information
+   */
+  public static async getData(): Promise<EsoStatusRawData[]> {
+    const remoteContent: string = await Connector.getRemoteContent();
+
+    const returnList: EsoStatusRawData[] = [];
+
+    if (!remoteContent) {
+      return [];
+    }
+
+    const json: RemoteData = <RemoteData>JSON.parse(remoteContent);
+    rawSupportZoneAssociations.forEach(
+      (raw: { raw: RemoteRawSlug; support: Support; zone: Zone }): void => {
+        returnList.push({
+          source: LiveServicesURL,
+          raw: `"${raw.raw}":"${json.zos_platform_response.response[raw.raw]}"`,
+          slug: <Slug>`${ServerType}_${raw.support}_${raw.zone}`,
+          type: ServerType,
+          support: raw.support,
+          zone: raw.zone,
+          status: <Status>(
+            json.zos_platform_response.response[raw.raw]?.toLowerCase()
+          ),
+          rawSlug: raw.raw,
+          rawStatus: json.zos_platform_response.response[raw.raw],
+        });
+      },
+    );
+
+    return returnList;
   }
 }
