@@ -2,6 +2,9 @@ import { RemoteResultMessage } from '../type/remoteResultMessage.type';
 import { RemoteResultCode } from '../type/remoteResultCode.type';
 import { RemoteRawStatus } from '../type/remoteRawStatus.type';
 
+/**
+ * Structure of the data returned by the API
+ */
 export interface RemoteData {
   zos_platform_response: {
     response: {

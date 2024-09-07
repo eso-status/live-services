@@ -1,4 +1,4 @@
-import { Slug, Status, Support, Zone } from '@eso-status/types';
+import { ServerType, Slug, Status, Support, Zone } from '@eso-status/types';
 import { LiveServicesURL, rawSupportZoneAssociations } from './const';
 import { RemoteData } from './interface/remoteData.interface';
 import Connector from './connector';
@@ -27,8 +27,8 @@ export default class LiveServices {
         returnList.push({
           source: LiveServicesURL,
           raw: `"${raw.raw}":"${json.zos_platform_response.response[raw.raw]}"`,
-          slug: <Slug>`server_${raw.support}_${raw.zone}`,
-          type: 'server',
+          slug: <Slug>`${ServerType}_${raw.support}_${raw.zone}`,
+          type: ServerType,
           support: raw.support,
           zone: raw.zone,
           status: <Status>(

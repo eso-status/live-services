@@ -1,43 +1,57 @@
+import {
+  EuZone,
+  NaZone,
+  PcSupport,
+  PsSupport,
+  PtsZone,
+  XboxSupport,
+} from '@eso-status/types';
 import { RawAssociation } from './interface/rawAssociation.interface';
 import { SourceUrl } from './type/sourceUrl.type';
 
+/**
+ * URL serving as source for retrieving maintenance announcements
+ */
 export const LiveServicesURL: SourceUrl =
   'https://live-services.elderscrollsonline.com/status/realms';
 
+/**
+ * Association between raw data and its support and zone
+ */
 export const rawSupportZoneAssociations: RawAssociation[] = [
   {
     raw: 'The Elder Scrolls Online (EU)',
-    support: 'pc',
-    zone: 'eu',
+    support: PcSupport,
+    zone: EuZone,
   },
   {
     raw: 'The Elder Scrolls Online (NA)',
-    support: 'pc',
-    zone: 'na',
+    support: PcSupport,
+    zone: NaZone,
   },
   {
     raw: 'The Elder Scrolls Online (PS4 - EU)',
-    support: 'ps',
-    zone: 'eu',
+    support: PsSupport,
+    zone: EuZone,
   },
   {
     raw: 'The Elder Scrolls Online (PS4 - US)',
-    support: 'ps',
-    zone: 'na',
+    support: PsSupport,
+    zone: NaZone,
   },
   {
     raw: 'The Elder Scrolls Online (PTS)',
-    support: 'pc',
-    zone: 'pts',
+    support: PcSupport,
+    zone: PtsZone,
   },
   {
     raw: 'The Elder Scrolls Online (XBox - EU)',
-    support: 'xbox',
-    zone: 'eu',
+    support: XboxSupport,
+    zone: EuZone,
   },
   {
     raw: 'The Elder Scrolls Online (XBox - US)',
-    support: 'xbox',
-    zone: 'na',
+    support: XboxSupport,
+    zone: NaZone,
   },
 ];

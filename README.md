@@ -16,7 +16,7 @@
 [![Build Status](https://github.com/eso-status/live-services/workflows/CI/badge.svg)](https://github.com/eso-status/live-services/actions/workflows/CI.yaml)
 [![Build Status](https://github.com/eso-status/live-services/workflows/CD/badge.svg)](https://github.com/eso-status/live-services/actions/workflows/CD.yaml)
 
-eso-status/live-services
+eso-status/live-services is a library for retrieving and formatting data, which can be found at [https://live-services.elderscrollsonline.com/status/realms](https://live-services.elderscrollsonline.com/status/realms).
 
 ## Table of Contents
 - [Install](#install)
@@ -40,7 +40,7 @@ const esoStatusRawDataList: EsoStatusRawData[] = await LiveServices.getData();
 [
   {
     source: 'https://live-services.elderscrollsonline.com/status/realms',
-    raw: 'The Elder Scrolls Online (EU)',
+    raw: '"The Elder Scrolls Online (EU)":"UP"',
     slug: 'server_pc_eu',
     type: 'server',
     support: 'pc',
@@ -51,7 +51,7 @@ const esoStatusRawDataList: EsoStatusRawData[] = await LiveServices.getData();
   },
   {
     source: 'https://live-services.elderscrollsonline.com/status/realms',
-    raw: 'The Elder Scrolls Online (NA)',
+    raw: '"The Elder Scrolls Online (NA)":"UP"',
     slug: 'server_pc_na',
     type: 'server',
     support: 'pc',
@@ -62,7 +62,7 @@ const esoStatusRawDataList: EsoStatusRawData[] = await LiveServices.getData();
   },
   {
     source: 'https://live-services.elderscrollsonline.com/status/realms',
-    raw: 'The Elder Scrolls Online (PS4 - EU)',
+    raw: '"The Elder Scrolls Online (PS4 - EU)":"UP"',
     slug: 'server_ps_eu',
     type: 'server',
     support: 'ps',
@@ -73,7 +73,7 @@ const esoStatusRawDataList: EsoStatusRawData[] = await LiveServices.getData();
   },
   {
     source: 'https://live-services.elderscrollsonline.com/status/realms',
-    raw: 'The Elder Scrolls Online (PS4 - US)',
+    raw: '"The Elder Scrolls Online (PS4 - US)":"UP"',
     slug: 'server_ps_na',
     type: 'server',
     support: 'ps',
@@ -84,7 +84,7 @@ const esoStatusRawDataList: EsoStatusRawData[] = await LiveServices.getData();
   },
   {
     source: 'https://live-services.elderscrollsonline.com/status/realms',
-    raw: 'The Elder Scrolls Online (PTS)',
+    raw: '"The Elder Scrolls Online (PTS)":"UP"',
     slug: 'server_pc_pts',
     type: 'server',
     support: 'pc',
@@ -95,7 +95,7 @@ const esoStatusRawDataList: EsoStatusRawData[] = await LiveServices.getData();
   },
   {
     source: 'https://live-services.elderscrollsonline.com/status/realms',
-    raw: 'The Elder Scrolls Online (XBox - EU)',
+    raw: '"The Elder Scrolls Online (XBox - EU)":"UP"',
     slug: 'server_xbox_eu',
     type: 'server',
     support: 'xbox',
@@ -106,7 +106,7 @@ const esoStatusRawDataList: EsoStatusRawData[] = await LiveServices.getData();
   },
   {
     source: 'https://live-services.elderscrollsonline.com/status/realms',
-    raw: 'The Elder Scrolls Online (XBox - US)',
+    raw: '"The Elder Scrolls Online (XBox - US)":"UP"',
     slug: 'server_xbox_na',
     type: 'server',
     support: 'xbox',

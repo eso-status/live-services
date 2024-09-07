@@ -1,3 +1,6 @@
+/**
+ * Different raw data from announcements
+ */
 export type RemoteRaw =
   | '"The Elder Scrolls Online (EU)":"UP"'
   | '"The Elder Scrolls Online (EU)":"DOWN"'

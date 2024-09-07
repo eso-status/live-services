@@ -1,41 +1,12 @@
 {
   "name": "@eso-status/live-services",
   "version": "2.0.0-dev.0",
-  "description": "",
+  "description": "Library for retrieving and formatting data, which can be found at https://live-services.elderscrollsonline.com/status/realms",
   "author": "@dov118 <contact@dov118.dev> (https://dov118.dev)",
   "main": "lib/index.js",
   "license": "MIT",
   "engineStrict": true,
-  "files": [
-    "lib/interface/esoStatusRawData.interface.d.ts",
-    "lib/interface/esoStatusRawData.interface.js",
-    "lib/interface/rawAssociation.interface.d.ts",
-    "lib/interface/rawAssociation.interface.js",
-    "lib/interface/remoteData.interface.d.ts",
-    "lib/interface/remoteData.interface.js",
-    "lib/type/remoteRaw.type.d.ts",
-    "lib/type/remoteRaw.type.js",
-    "lib/type/remoteRawSlug.type.d.ts",
-    "lib/type/remoteRawSlug.type.js",
-    "lib/type/remoteRawStatus.type.d.ts",
-    "lib/type/remoteRawStatus.type.js",
-    "lib/type/remoteResultCode.type.d.ts",
-    "lib/type/remoteResultCode.type.js",
-    "lib/type/remoteResultMessage.type.d.ts",
-    "lib/type/remoteResultMessage.type.js",
-    "lib/type/sourceUrl.type.d.ts",
-    "lib/type/sourceUrl.type.js",
-    "lib/connector.d.ts",
-    "lib/connector.js",
-    "lib/const.d.ts",
-    "lib/const.js",
-    "lib/index.d.ts",
-    "lib/index.js",
-    ".npmrc,",
-    "LICENSE.md",
-    "package.json",
-    "README.md"
-  ],
+  "files": [],
   "engines": {
     "node": "^18.18.0 || ^20.0.0"
   },
@@ -60,7 +31,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@eso-status/types": "2.0.0-dev.5",
+    "@eso-status/types": "2.0.0-dev.12",
     "axios": "1.7.7"
   },
   "devDependencies": {

@@ -1,3 +1,6 @@
+/**
+ * Different slugs of announcements
+ */
 export type RemoteRawSlug =
   | 'The Elder Scrolls Online (EU)'
   | 'The Elder Scrolls Online (NA)'
