@@ -1,6 +1,6 @@
 {
   "name": "@eso-status/live-services",
-  "version": "2.0.0-dev.1",
+  "version": "2.0.0-dev.2",
   "description": "Library for retrieving and formatting data, which can be found at https://live-services.elderscrollsonline.com/status/realms",
   "author": "@dov118 <contact@dov118.dev> (https://dov118.dev)",
   "main": "lib/index.js",
