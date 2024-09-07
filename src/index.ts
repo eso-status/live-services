@@ -1,8 +1,14 @@
-import { ServerType, Slug, Status, Support, Zone } from '@eso-status/types';
+import {
+  EsoStatusRawData,
+  ServerType,
+  Slug,
+  Status,
+  Support,
+  Zone,
+} from '@eso-status/types';
 import { LiveServicesURL, rawSupportZoneAssociations } from './const';
 import { RemoteData } from './interface/remoteData.interface';
 import Connector from './connector';
-import { EsoStatusRawData } from './interface/esoStatusRawData.interface';
 import { RemoteRawSlug } from './type/remoteRawSlug.type';
 
 /**
