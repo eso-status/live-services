@@ -21,7 +21,7 @@ import { PatternItem } from '../interface/patternItem.interface';
 
 const PcEuUp: EsoStatusRawData = {
   source: 'https://live-services.elderscrollsonline.com/status/realms',
-  raw: 'The Elder Scrolls Online (EU):UP',
+  raw: 'The Elder Scrolls Online (EU) : UP',
   slug: ServerPcEuSlug,
   type: ServerType,
   support: PcSupport,
@@ -32,7 +32,7 @@ const PcEuUp: EsoStatusRawData = {
 };
 const PcEuDown: EsoStatusRawData = {
   source: 'https://live-services.elderscrollsonline.com/status/realms',
-  raw: 'The Elder Scrolls Online (EU):DOWN',
+  raw: 'The Elder Scrolls Online (EU) : DOWN',
   slug: ServerPcEuSlug,
   type: ServerType,
   support: PcSupport,
@@ -44,7 +44,7 @@ const PcEuDown: EsoStatusRawData = {
 
 const PcNaUp: EsoStatusRawData = {
   source: 'https://live-services.elderscrollsonline.com/status/realms',
-  raw: 'The Elder Scrolls Online (NA):UP',
+  raw: 'The Elder Scrolls Online (NA) : UP',
   slug: ServerPcNaSlug,
   type: ServerType,
   support: PcSupport,
@@ -55,7 +55,7 @@ const PcNaUp: EsoStatusRawData = {
 };
 const PcNaDown: EsoStatusRawData = {
   source: 'https://live-services.elderscrollsonline.com/status/realms',
-  raw: 'The Elder Scrolls Online (NA):DOWN',
+  raw: 'The Elder Scrolls Online (NA) : DOWN',
   slug: ServerPcNaSlug,
   type: ServerType,
   support: PcSupport,
@@ -67,7 +67,7 @@ const PcNaDown: EsoStatusRawData = {
 
 const PsEuUp: EsoStatusRawData = {
   source: 'https://live-services.elderscrollsonline.com/status/realms',
-  raw: 'The Elder Scrolls Online (PS4 - EU):UP',
+  raw: 'The Elder Scrolls Online (PS4 - EU) : UP',
   slug: ServerPsEuSlug,
   type: ServerType,
   support: PsSupport,
@@ -78,7 +78,7 @@ const PsEuUp: EsoStatusRawData = {
 };
 const PsEuDown: EsoStatusRawData = {
   source: 'https://live-services.elderscrollsonline.com/status/realms',
-  raw: 'The Elder Scrolls Online (PS4 - EU):DOWN',
+  raw: 'The Elder Scrolls Online (PS4 - EU) : DOWN',
   slug: ServerPsEuSlug,
   type: ServerType,
   support: PsSupport,
@@ -90,7 +90,7 @@ const PsEuDown: EsoStatusRawData = {
 
 const PsNaUp: EsoStatusRawData = {
   source: 'https://live-services.elderscrollsonline.com/status/realms',
-  raw: 'The Elder Scrolls Online (PS4 - US):UP',
+  raw: 'The Elder Scrolls Online (PS4 - US) : UP',
   slug: ServerPsNaSlug,
   type: ServerType,
   support: PsSupport,
@@ -101,7 +101,7 @@ const PsNaUp: EsoStatusRawData = {
 };
 const PsNaDown: EsoStatusRawData = {
   source: 'https://live-services.elderscrollsonline.com/status/realms',
-  raw: 'The Elder Scrolls Online (PS4 - US):DOWN',
+  raw: 'The Elder Scrolls Online (PS4 - US) : DOWN',
   slug: ServerPsNaSlug,
   type: ServerType,
   support: PsSupport,
@@ -113,7 +113,7 @@ const PsNaDown: EsoStatusRawData = {
 
 const PcPtsUp: EsoStatusRawData = {
   source: 'https://live-services.elderscrollsonline.com/status/realms',
-  raw: 'The Elder Scrolls Online (PTS):UP',
+  raw: 'The Elder Scrolls Online (PTS) : UP',
   slug: ServerPcPtsSlug,
   type: ServerType,
   support: PcSupport,
@@ -124,7 +124,7 @@ const PcPtsUp: EsoStatusRawData = {
 };
 const PcPtsDown: EsoStatusRawData = {
   source: 'https://live-services.elderscrollsonline.com/status/realms',
-  raw: 'The Elder Scrolls Online (PTS):DOWN',
+  raw: 'The Elder Scrolls Online (PTS) : DOWN',
   slug: ServerPcPtsSlug,
   type: ServerType,
   support: PcSupport,
@@ -136,7 +136,7 @@ const PcPtsDown: EsoStatusRawData = {
 
 const XboxEuUp: EsoStatusRawData = {
   source: 'https://live-services.elderscrollsonline.com/status/realms',
-  raw: 'The Elder Scrolls Online (XBox - EU):UP',
+  raw: 'The Elder Scrolls Online (XBox - EU) : UP',
   slug: ServerXboxEuSlug,
   type: ServerType,
   support: XboxSupport,
@@ -147,7 +147,7 @@ const XboxEuUp: EsoStatusRawData = {
 };
 const XboxEuDown: EsoStatusRawData = {
   source: 'https://live-services.elderscrollsonline.com/status/realms',
-  raw: 'The Elder Scrolls Online (XBox - EU):DOWN',
+  raw: 'The Elder Scrolls Online (XBox - EU) : DOWN',
   slug: ServerXboxEuSlug,
   type: ServerType,
   support: XboxSupport,
@@ -159,7 +159,7 @@ const XboxEuDown: EsoStatusRawData = {
 
 const XboxNaUp: EsoStatusRawData = {
   source: 'https://live-services.elderscrollsonline.com/status/realms',
-  raw: 'The Elder Scrolls Online (XBox - US):UP',
+  raw: 'The Elder Scrolls Online (XBox - US) : UP',
   slug: ServerXboxNaSlug,
   type: ServerType,
   support: XboxSupport,
@@ -170,7 +170,7 @@ const XboxNaUp: EsoStatusRawData = {
 };
 const XboxNaDown: EsoStatusRawData = {
   source: 'https://live-services.elderscrollsonline.com/status/realms',
-  raw: 'The Elder Scrolls Online (XBox - US):DOWN',
+  raw: 'The Elder Scrolls Online (XBox - US) : DOWN',
   slug: ServerXboxNaSlug,
   type: ServerType,
   support: XboxSupport,
