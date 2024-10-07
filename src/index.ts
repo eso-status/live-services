@@ -32,7 +32,7 @@ export default class LiveServices {
       (raw: { raw: RemoteRawSlug; support: Support; zone: Zone }): void => {
         returnList.push({
           source: LiveServicesURL,
-          raw: `"${raw.raw}":"${json.zos_platform_response.response[raw.raw]}"`,
+          raw: `${raw.raw} : ${json.zos_platform_response.response[raw.raw]}`,
           slug: <Slug>`${ServerType}_${raw.support}_${raw.zone}`,
           type: ServerType,
           support: raw.support,
