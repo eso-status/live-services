@@ -253,6 +253,10 @@ const pattern: PatternItem[] = [
       XboxNaDown,
     ],
   },
+  {
+    file: 'PsNaDown.html',
+    expected: [PcEuUp, PcNaUp, PsEuUp, PsNaDown, PcPtsUp, XboxEuUp, XboxNaUp],
+  },
 ];
 
 export default pattern;
