@@ -4,6 +4,7 @@ import { LiveServicesURL } from './const';
 /**
  * Class for retrieving information from announcements
  */
+/* eslint-disable @typescript-eslint/no-extraneous-class */
 export default class Connector {
   /**
    * Method for retrieving remote content via a URL
@@ -13,8 +14,9 @@ export default class Connector {
     const response: AxiosResponse<string> =
       await axios.get<string>(LiveServicesURL);
 
-    return response?.status === 200 && !!response?.data
-      ? JSON.stringify(response?.data)
+    return response.status === 200 && !!response.data
+      ? JSON.stringify(response.data)
       : '';
   }
 }
+/* eslint-enable @typescript-eslint/no-extraneous-class */
