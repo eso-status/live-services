@@ -14,6 +14,7 @@ import { RemoteRawSlug } from './type/remoteRawSlug.type';
 /**
  * Class for retrieving announcement information
  */
+/* eslint-disable @typescript-eslint/no-extraneous-class */
 export default class LiveServices {
   /**
    * Method for retrieving announcement information
@@ -27,19 +28,19 @@ export default class LiveServices {
       return [];
     }
 
-    const json: RemoteData = <RemoteData>JSON.parse(remoteContent);
+    const json: RemoteData = JSON.parse(remoteContent) as RemoteData;
     rawSupportZoneAssociations.forEach(
       (raw: { raw: RemoteRawSlug; support: Support; zone: Zone }): void => {
         returnList.push({
           source: LiveServicesURL,
           raw: `${raw.raw} : ${json.zos_platform_response.response[raw.raw]}`,
-          slug: <Slug>`${ServerType}_${raw.support}_${raw.zone}`,
+          slug: `${ServerType}_${raw.support}_${raw.zone}` as Slug,
           type: ServerType,
           support: raw.support,
           zone: raw.zone,
-          status: <Status>(
-            json.zos_platform_response.response[raw.raw]?.toLowerCase()
-          ),
+          status: json.zos_platform_response.response[
+            raw.raw
+          ].toLowerCase() as Status,
           rawSlug: raw.raw,
           rawStatus: json.zos_platform_response.response[raw.raw],
         });
@@ -49,3 +50,4 @@ export default class LiveServices {
     return returnList;
   }
 }
+/* eslint-enable @typescript-eslint/no-extraneous-class */

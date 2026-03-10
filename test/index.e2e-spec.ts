@@ -19,7 +19,7 @@ describe('LiveServices (e2e)', (): void => {
             );
             return Promise.resolve({
               status: 200,
-              data: <RemoteData>JSON.parse(data),
+              data: JSON.parse(data) as RemoteData,
             });
           },
         );
