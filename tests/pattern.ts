@@ -1,16 +1,21 @@
-import {
-  Support,
-  Slug,
-  Status,
-  Zone,
-} from '@eso-status/types';
+import { Support, Slug, Status, Zone } from '@eso-status/types';
 
 /**
  * Pattern of Live Services data
  *
  * @type {raw: [string, string], result: {rawSlug: string, rawStatus: string, slug: Slug, support: Support, zone: Zone, status: Status}}[]
  */
-export const liveServicesPattern: {raw: [string, string], result: {rawSlug: string, rawStatus: string, slug: Slug, support: Support, zone: Zone, status: Status}}[] = [
+export const liveServicesPattern: {
+  raw: [string, string];
+  result: {
+    rawSlug: string;
+    rawStatus: string;
+    slug: Slug;
+    support: Support;
+    zone: Zone;
+    status: Status;
+  };
+}[] = [
   {
     raw: ['The Elder Scrolls Online (EU)', 'UP'],
     result: {
@@ -167,7 +172,7 @@ export const liveServicesPattern: {raw: [string, string], result: {rawSlug: stri
   },
 ];
 
-export const statusPattern: {rawStatus: string, result: Status}[] = [
+export const statusPattern: { rawStatus: string; result: Status }[] = [
   {
     rawStatus: 'UP',
     result: 'up',
