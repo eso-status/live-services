@@ -31,9 +31,12 @@ export default class LiveServices {
     const json: RemoteData = JSON.parse(remoteContent) as RemoteData;
     rawSupportZoneAssociations.forEach(
       (raw: { raw: RemoteRawSlug; support: Support; zone: Zone }): void => {
+        const rawMessage = `${raw.raw} : ${json.zos_platform_response.response[raw.raw]}`;
         returnList.push({
           source: LiveServicesURL,
-          raw: `${raw.raw} : ${json.zos_platform_response.response[raw.raw]}`,
+          raw: rawMessage,
+          // A Live Services message has no variable part (date, hour) to replace: its pattern is the raw message
+          pattern: rawMessage,
           slug: `${ServerType}_${raw.support}_${raw.zone}` as Slug,
           type: ServerType,
           support: raw.support,
