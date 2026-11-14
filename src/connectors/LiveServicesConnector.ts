@@ -1,12 +1,11 @@
-import { AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { RawEsoStatus } from '@eso-status/types';
 import LiveServicesElement from '../classes/LiveServicesElement';
-
-const axios = require('axios');
 
 /**
  * Connector used to get data from https://live-services.elderscrollsonline.com/status/realms
  */
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class -- the published 1.x API exposes static methods, called as is by @eso-status/api 1.x
 export default class LiveServicesConnector {
   /**
    * URL to get remote content
@@ -16,7 +15,8 @@ export default class LiveServicesConnector {
    *
    * @return string URL to get remote content
    */
-  public static url = 'https://live-services.elderscrollsonline.com/status/realms';
+  public static readonly url =
+    'https://live-services.elderscrollsonline.com/status/realms';
 
   /**
    * Methode used to get raw content of the remote website
@@ -27,15 +27,20 @@ export default class LiveServicesConnector {
    * @return Promise<string> Raw content of the remote website
    */
   public static async getRemoteContent(): Promise<string> {
-    // @ts-ignore
-    const response: AxiosResponse<string> = await axios.get<string>(LiveServicesConnector.url);
+    const response: AxiosResponse<string> = await axios.get<string>(
+      LiveServicesConnector.url,
+    );
 
-    if (response?.status !== 200) {
-      throw new Error(`Bad response ${response?.status} (${response?.data})`);
-    } else if (!response?.data) {
-      throw new Error(`Empty response ${response?.status} (${response?.data})`);
+    if (response.status !== 200) {
+      throw new Error(
+        `Bad response ${String(response.status)} (${response.data})`,
+      );
+    } else if (!response.data) {
+      throw new Error(
+        `Empty response ${String(response.status)} (${response.data})`,
+      );
     } else {
-      return JSON.stringify(response?.data);
+      return JSON.stringify(response.data);
     }
   }
 
@@ -49,7 +54,13 @@ export default class LiveServicesConnector {
    * @return string Raw content containing eso servers status information
    */
   public static getFilterContent(remoteContent: string): string {
-    return JSON.stringify(JSON.parse(remoteContent)?.zos_platform_response?.response);
+    return JSON.stringify(
+      (
+        JSON.parse(remoteContent) as {
+          zos_platform_response?: { response?: unknown };
+        }
+      ).zos_platform_response?.response,
+    );
   }
 
   /**
@@ -61,8 +72,12 @@ export default class LiveServicesConnector {
    * @param filteredContent string Raw content containing eso servers status information
    * @return RawEsoStatus[] List of each information
    */
-  public static changeFilterContentForList(filteredContent: string): RawEsoStatus[] {
-    return Object.entries(JSON.parse(filteredContent)).map((item: [string, unknown]): RawEsoStatus => ({
+  public static changeFilterContentForList(
+    filteredContent: string,
+  ): RawEsoStatus[] {
+    return Object.entries(
+      JSON.parse(filteredContent) as Record<string, unknown>,
+    ).map((item: [string, unknown]): RawEsoStatus => ({
       sources: [LiveServicesConnector.url],
       raw: [item[0], String(item[1])],
       rawSlug: item[0],

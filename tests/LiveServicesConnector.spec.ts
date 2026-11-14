@@ -1,4 +1,4 @@
-import { RawEsoStatus, Slug } from '@eso-status/types';
+import { RawEsoStatus } from '@eso-status/types';
 import LiveServicesConnector from '../src/connectors/LiveServicesConnector';
 
 describe('ServiceAlertConnector', (): void => {
@@ -10,38 +10,42 @@ describe('ServiceAlertConnector', (): void => {
   beforeAll(async (): Promise<void> => {
     remoteContent = await LiveServicesConnector.getRemoteContent();
     filteredContent = LiveServicesConnector.getFilterContent(remoteContent);
-    filteredContentList = LiveServicesConnector.changeFilterContentForList(filteredContent);
+    filteredContentList =
+      LiveServicesConnector.changeFilterContentForList(filteredContent);
     data = LiveServicesConnector.getData(filteredContentList);
   });
 
   it('getRemoteContent', (): void => {
-    expect(remoteContent.includes('{"zos_platform_response":{"response":{')).toEqual(true);
-    expect(remoteContent.includes('},"result_code":2000,"result_message":"success"}}')).toEqual(true);
+    expect(remoteContent).toContain('{"zos_platform_response":{"response":{');
+    expect(remoteContent).toContain(
+      '},"result_code":2000,"result_message":"success"}}',
+    );
   });
 
   it('getFilterContent', (): void => {
-    expect(filteredContent.includes('The Elder Scrolls Online (EU)')).toEqual(true);
-    expect(filteredContent.includes('The Elder Scrolls Online (NA)')).toEqual(true);
-    expect(filteredContent.includes('The Elder Scrolls Online (PS4 - EU)')).toEqual(true);
-    expect(filteredContent.includes('The Elder Scrolls Online (PS4 - US)')).toEqual(true);
-    expect(filteredContent.includes('The Elder Scrolls Online (PTS)')).toEqual(true);
-    expect(filteredContent.includes('The Elder Scrolls Online (XBox - EU)')).toEqual(true);
-    expect(filteredContent.includes('The Elder Scrolls Online (XBox - US)')).toEqual(true);
+    expect(filteredContent).toContain('The Elder Scrolls Online (EU)');
+    expect(filteredContent).toContain('The Elder Scrolls Online (NA)');
+    expect(filteredContent).toContain('The Elder Scrolls Online (PS4 - EU)');
+    expect(filteredContent).toContain('The Elder Scrolls Online (PS4 - US)');
+    expect(filteredContent).toContain('The Elder Scrolls Online (PTS)');
+    expect(filteredContent).toContain('The Elder Scrolls Online (XBox - EU)');
+    expect(filteredContent).toContain('The Elder Scrolls Online (XBox - US)');
   });
 
   it('changeFilterContentForList', (): void => {
     filteredContentList.forEach((item: RawEsoStatus): void => {
-      expect(item.rawSlug?.includes('The Elder Scrolls Online ')).toEqual(true);
+      expect(item.rawSlug?.includes('The Elder Scrolls Online ')).toBe(true);
     });
   });
 
   it('getData', (): void => {
     data.forEach((item: RawEsoStatus): void => {
-      expect(item.rawSlug?.includes('The Elder Scrolls Online ')).toEqual(true);
-      expect((<Slug[]>item.slugs).length !== 0 && (<Slug[]>item.slugs)[0] !== 'undefined').toEqual(true);
-      expect(item.status !== 'undefined').toEqual(true);
-      expect(item.support !== undefined).toEqual(true);
-      expect(item.zone !== undefined).toEqual(true);
+      expect(item.rawSlug?.includes('The Elder Scrolls Online ')).toBe(true);
+      expect(item.slugs).not.toHaveLength(0);
+      expect(item.slugs?.[0]).not.toBe('undefined');
+      expect(item.status).not.toBe('undefined');
+      expect(item.support).toBeDefined();
+      expect(item.zone).toBeDefined();
     });
   });
 });
